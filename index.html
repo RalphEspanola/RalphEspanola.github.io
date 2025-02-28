@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Portfolio</title>
+    <!-- CSS Links -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="Assets/Vendor/Bootstrap/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="Assets/CSS/style.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav id="navbar" class="navbar navbar-expand-lg fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#about">
+          <span class="text-light">Ralph</span>
+          <span class="brand-highlight">Española</span>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item px-2">
+              <a class="nav-link" href="#home">Home</a>
+            </li>
+            <li class="nav-item px-2">
+              <a class="nav-link" href="#about">About Me</a>
+            </li>
+            <li class="nav-item px-2">
+              <a class="nav-link" href="#projects">Projects</a>
+            </li>
+            <li class="nav-item px-2">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="section my-5 py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 d-flex flex-column justify-content-center">
+            <div class="mb-3">
+              <p class="display-6">printf ("Ralph Española");</p>
+              <p class="lead fs-5">A <span class="typewriter-text"></span></p>
+              <p>
+                I'm a
+                <span class="highlight-text"
+                  >Bachelor of Science in Information Systems</span
+                >
+                student at
+                <span class="highlight-text">Caraga State University</span> who
+                enjoys exploring new things.
+              </p>
+            </div>
+
+            <!-- Social Media Icons -->
+            <div class="">
+              <div class="d-flex">
+                <a
+                  href="https://www.facebook.com/ralph.espanola.52"
+                  target="_blank"
+                  class="social-icon me-3"
+                >
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a
+                  href="https://github.com/RalphEspanola"
+                  target="_blank"
+                  class="social-icon me-3"
+                >
+                  <i class="fab fa-github"></i>
+                </a>
+                <a
+                  href="https://www.instagram.com/ralphespanola01/"
+                  target="_blank"
+                  class="social-icon me-3"
+                >
+                  <i class="fab fa-instagram"></i>
+                </a>
+              </div>
+            </div>
+            <button id="viewCvBtn" class="btn btn-primary neon-button mt-3">
+              View CV
+            </button>
+            <div id="cvModal" class="modal">
+              <div class="modal-content">
+                <span class="close">&times;</span>
+                <iframe
+                  src="Assets/Vendor/Others/ESPAÑOLA (1).pdf"
+                  width="100%"
+                  height="600px"
+                ></iframe>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-1"></div>
+          <div
+            class="col-md-5 text-center d-flex align-items-center justify-content-center"
+          >
+            <img
+              src="Assets/img/CV pic.jpg"
+              alt="Ralph's Photo"
+              class="profile-image profile-img"
+              height="300px"
+              width="300px"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Me -->
+    <section id="about" class="section about-me mt-5 pt-5">
+      <div class="container">
+        <div class="row align-items-center">
+          <!-- About Image -->
+          <div class="col-md-5 text-center">
+            <img
+              src="Assets/img/CV pic.jpg"
+              alt="Ralph's Photo"
+              class="profile-image profile-img"
+              height="300px"
+              width="300px"
+            />
+          </div>
+          <!-- About Text -->
+          <div class="col-md-7">
+            <h2 class="section-title">About <span>Me</span></h2>
+            <p>
+              Hello! I'm Ralph Byron Española, a passionate and driven
+              Information Systems student at Caraga State University. I have a
+              deep enthusiasm for exploring the ever-evolving world of
+              technology, particularly in web development, UI/UX design, and
+              problem-solving. My curiosity pushes me to constantly seek new
+              challenges and refine my skills to create innovative and efficient
+              solutions.
+            </p>
+            <p>
+              When I'm not immersed in coding and development, I enjoy spending
+              my time gaming, working out, and trying different sports to stay
+              active and engaged. I also love discovering new technologies,
+              expanding my knowledge, and collaborating with like-minded
+              individuals to enhance both my technical and creative abilities.
+            </p>
+          </div>
+        </div>
+
+        <div class="container text-center">
+          <!-- Toggle Buttons -->
+          <div class="btn-group mb-4" role="group">
+            <button id="showSkills" class="btn btn-success">My Skills</button>
+            <button id="showCertificates" class="btn btn-outline-success">
+              My Certificates
+            </button>
+          </div>
+
+          <!-- Skills Section (Default Visible) -->
+          <div id="skillsSection" class="row">
+            <div class="col">
+              <div class="skill-card">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+                  alt="HTML"
+                  class="skill-logo"
+                  height="50px"
+                  width="50px"
+                />
+                <p>HTML</p>
+              </div>
+            </div>
+            <div class="col">
+              <div class="skill-card">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+                  alt="CSS"
+                  class="skill-logo"
+                  height="50px"
+                  width="50px"
+                />
+                <p>CSS</p>
+              </div>
+            </div>
+            <div class="col">
+              <div class="skill-card">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                  alt="JavaScript"
+                  class="skill-logo"
+                  height="50px"
+                  width="50px"
+                />
+                <p>JavaScript</p>
+              </div>
+            </div>
+            <div class="col">
+              <div class="skill-card">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg"
+                  alt="Bootstrap"
+                  class="skill-logo"
+                  height="50px"
+                  width="50px"
+                />
+                <p>Bootstrap</p>
+              </div>
+            </div>
+            <div class="col">
+              <div class="skill-card">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
+                  alt="PostgreSQL"
+                  class="skill-logo"
+                  height="50px"
+                  width="50px"
+                />
+                <p>PostgreSQL</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Certificates Section (Hidden Initially) -->
+          <div id="certificatesSection" class="row d-none">
+            <div class="col-md-4">
+              <div class="certificate-card">
+                <img
+                  src="Assets/img/SQL-Certificate.png"
+                  class="card-img-top"
+                  alt="HTML Certificate"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">SQL</h5>
+                  <p class="card-text">SoloLearn</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="certificate-card">
+                <img
+                  src="Assets/img/C-Cirtificate.png"
+                  class="card-img-top"
+                  alt="HTML Certificate"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">C Language</h5>
+                  <p class="card-text">SoloLearn</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="certificate-card">
+                <img
+                  src="Assets/img/HTML-Certificate.png"
+                  class="card-img-top"
+                  alt="HTML Certificate"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">HTML</h5>
+                  <p class="card-text">SoloLearn</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="certificate-card">
+                <img
+                  src="Assets/img/CSS-Certificate.png"
+                  class="card-img-top"
+                  alt="CSS Certificate"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">CSS</h5>
+                  <p class="card-text">SoloLearn</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="certificate-card">
+                <img
+                  src="Assets/img/Js-Certificate.png"
+                  class="card-img-top"
+                  alt="JavaScript Certificate"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">JavaScript</h5>
+                  <p class="card-text">SoloLearn</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section py-5 container">
+      <h2 class="text-center mb-4">My Projects</h2>
+      <div class="row project-container">
+        <!-- Project 1 -->
+        <div class="col-md-4">
+          <div class="project-wrapper">
+            <div class="blur-bg"></div>
+            <!-- Blur effect container -->
+            <div class="card project-card">
+              <div class="card-content">
+                <img
+                  src="Assets/img/Efficio.jpeg"
+                  class="card-img-top"
+                  alt="Project 1"
+                />
+                <div class="card-body">
+                  <h5 class="card-title text-light">Project One</h5>
+                  <p class="card-text text-light">
+                    Efficio is designed to help individuals and teams manage
+                    their tasks effectively while incorporating the Pomodoro
+                    technique.
+                  </p>
+                  <a href="#" class="btn btn-success">View Project</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="py-5">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12 text-center mb-4">
+            <h2 class="section-title">Contact Me</h2>
+          </div>
+        </div>
+        <div class="row justify-content-between">
+          <!-- Left Column (Contact Info) -->
+          <div class="col-md-5 mb-4 mb-md-0">
+            <div class="contact-box p-4">
+              <h3 class="mb-4">
+                <i class="fas fa-paper-plane me-2"></i>Get in Touch
+              </h3>
+              <div class="contact-info">
+                <p>
+                  <i class="fas fa-map-marker-alt"></i> Address: Bayugan, Agusan
+                  Del Sur
+                </p>
+                <p><i class="fas fa-phone"></i> Phone: +639605270630</p>
+                <p>
+                  <i class="fas fa-envelope"></i> Email:
+                  ralphbyron.espanola@carsu.edu.ph
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column (Social Links) -->
+          <div class="col-md-5">
+            <div class="contact-box p-4">
+              <h3 class="mb-4">
+                <i class="fas fa-share-alt me-2"></i>Follow Me
+              </h3>
+              <div class="contact-social">
+                <p>
+                  <a
+                    href="https://github.com/RalphEspanola"
+                    target="_blank"
+                    class="social-link"
+                  >
+                    <i class="fab fa-github"></i> GitHub
+                  </a>
+                </p>
+                <p>
+                  <a
+                    href="https://www.facebook.com/ralph.espanola.52"
+                    target="_blank"
+                    class="social-link"
+                  >
+                    <i class="fab fa-facebook"></i> Facebook
+                  </a>
+                </p>
+                <p>
+                  <a
+                    href="https://www.instagram.com/ralphespanola01/"
+                    target="_blank"
+                    class="social-link"
+                  >
+                    <i class="fab fa-instagram"></i> Instagram
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- JavaScript Links -->
+    <script src="Assets/Vendor/Bootstrap/js/bootstrap.min.js"></script>
+    <script src="Assets/JS/script.js"></script>
+  </body>
+</html>

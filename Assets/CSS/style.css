@@ -1,0 +1,676 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #1c1c1c; /* Dark gray for better contrast */
+  color: white;
+}
+
+#home {
+  margin-top: 180px !important; /* Adjust this value as needed */
+}
+
+/* Navbar */
+.navbar {
+  background-color: black;
+  transition: background 0.3s ease-in-out;
+  padding: 0.5rem 1rem; /* Standard Bootstrap navbar padding */
+  min-height: 56px; /* Bootstrap default height */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Ensure navbar stays on top of other content */
+}
+
+.navbar-brand {
+  color: #077b32 !important; /* Keep color consistent */
+  font-weight: 600;
+  transition: color 0.3s ease-in-out;
+}
+
+.navbar-brand:hover {
+  color: #04a03d !important; /* Slightly lighter green */
+}
+
+.navbar-nav .nav-link {
+  position: relative;
+  font-weight: 500;
+  color: white;
+  transition: color 0.3s ease-in-out;
+}
+
+/* Hover & Active Effect */
+.navbar-nav .nav-link::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background-color: #077b32;
+  transition: width 0.4s ease-in-out;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  color: #077b32 !important;
+}
+
+.navbar-nav .nav-link:hover::before,
+.navbar-nav .nav-link.active::before {
+  width: 100%;
+}
+
+.active-link {
+  color: #4caf50 !important; /* Neon green text */
+  text-shadow: 0 0 5px #4caf50, 0 0 10px #4caf50, 0 0 15px #4caf50;
+  font-weight: bold;
+  transition: 0.3s ease-in-out;
+}
+
+/* Typewriter Effect */
+.typewriter-text {
+  color: #077b32;
+  font-weight: 500;
+}
+
+.typewriter-text::after {
+  content: "\2588"; /* Full block character */
+  display: inline-block;
+  width: 5px;
+  background-color: currentColor;
+  animation: blink 0.6s infinite alternate;
+}
+
+@keyframes blink {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* Social Media Icons */
+.social-links {
+  margin-top: 20px;
+}
+.social-icon {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  margin-right: 15px;
+  font-size: 1.2rem;
+  color: white;
+  border: 2px solid white;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+.social-icon:hover {
+  color: #fff;
+  background-color: #4caf50; /* Matches your text-green class */
+  border-color: #4caf50;
+  transform: scale(1.2); /* Slight enlargement on hover */
+}
+
+/* === Cv === */
+/* Modal styling */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1050;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 800px;
+  border-radius: 8px;
+  position: relative;
+}
+
+.close {
+  color: #aaa;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 1060;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+}
+
+.modal-cv-image {
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.modal-cv-image:last-child {
+  margin-bottom: 0;
+}
+
+.neon-button {
+  width: 150px; /* Fixed button width */
+  height: 40px; /* Optional: Adjust height for balance */
+  font-size: 14px;
+  font-weight: bold;
+  padding: 8px 0; /* Center text vertically */
+  color: #fff;
+  background-color: transparent;
+  border: 2px solid #4caf50;
+  border-radius: 5px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  box-shadow: 0 0 5px #4caf50, 0 0 10px #4caf50;
+  text-align: center; /* Ensure text is centered */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.neon-button:hover {
+  color: #fff;
+  background: #4caf50;
+  box-shadow: 0 0 15px #4caf50, 0 0 30px #4caf50;
+}
+
+.neon-button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: radial-gradient(
+    circle,
+    rgba(76, 175, 80, 0.3) 10%,
+    transparent 50%
+  );
+  transition: 0.3s ease-in-out;
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0.5;
+}
+
+.neon-button:hover::before {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
+
+/* Buttons */
+
+/* Base styles for both buttons in the group */
+.btn-group .btn {
+  padding: 10px 20px;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Active button (My Skills) */
+.btn-group .btn-success {
+  background-color: #077b32;
+  border: 2px solid #077b32;
+  color: white;
+  box-shadow: 0 0 10px rgba(7, 123, 50, 0.3);
+}
+
+.btn-group .btn-success:hover {
+  background-color: #055a25;
+  border-color: #055a25;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(7, 123, 50, 0.7);
+}
+
+/* Inactive button (My Certificates) */
+.btn-group .btn-outline-success {
+  background-color: transparent;
+  color: #077b32;
+  border: 2px solid #077b32;
+}
+
+.btn-group .btn-outline-success:hover {
+  background-color: white;
+  color: #077b32;
+  box-shadow: 0 0 15px rgba(7, 123, 50, 0.6);
+}
+
+/* Add specific styles for when each button becomes active */
+.btn-group .btn-outline-success.active {
+  background-color: #077b32;
+  color: white;
+  box-shadow: 0 0 15px rgba(7, 123, 50, 0.5);
+}
+
+/* Fix border radius issues in button groups */
+.btn-group .btn:first-child {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.btn-group .btn:last-child {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+/* Profile Image Styling */
+.profile-img {
+  border: 3px solid #4caf50; /* Neon green border */
+  border-radius: 50%; /* Optional: makes it circular */
+  box-shadow: 0 0 10px #4caf50, 0 0 20px #4caf50, 0 0 30px #4caf50;
+  transition: 0.3s ease-in-out;
+}
+
+.profile-img:hover {
+  box-shadow: 0 0 15px #4caf50, 0 0 30px #4caf50, 0 0 45px #4caf50;
+  transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+/* About me skill and cert section ni */
+/* Default styling*/
+.skill-card,
+.certificate-card {
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Add slight scaling effect on hover for both card types */
+.skill-card:hover,
+.certificate-card:hover {
+  transform: scale(1.2);
+}
+
+/* Blur transition only for certificate cards */
+.certificate-card {
+  transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+/* Blurred effect only for non-hovered certificate cards */
+.certificate-card.blurred {
+  filter: blur(5px);
+  opacity: 0.5;
+}
+
+/* Skill cards should never have blur */
+.skill-card.blurred {
+  filter: none;
+  opacity: 1;
+}
+
+/* My project section */
+/* My project section */
+.project-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Wrapper to position the card & blur effect */
+.project-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Apply a neon glow to all cards by default */
+.project-card {
+  position: relative;
+  z-index: 1;
+  background: transparent;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  padding: 10px;
+  width: 100%;
+  border: 2px solid #00ff7e;
+  box-shadow: 0 0 5px rgba(0, 255, 126, 0.3), 0 0 15px rgba(0, 255, 126, 0.2),
+    0 0 30px rgba(0, 255, 126, 0.1);
+}
+
+/* Stronger glow for hovered card */
+.project-wrapper:hover .project-card {
+  transform: scale(1.05);
+  border-color: #00ff7e;
+  box-shadow: 0 0 10px rgba(0, 255, 126, 0.6), 0 0 20px rgba(0, 255, 126, 0.5),
+    0 0 40px rgba(0, 255, 126, 0.4);
+}
+
+/* Apply blur to non-hovered cards */
+.project-wrapper.not-hovered {
+  filter: blur(5px);
+  opacity: 0.5;
+  transform: scale(0.95);
+}
+
+/* Add a subtle glow to buttons on hover */
+.project-card:hover .btn-success {
+  box-shadow: 0 0 15px rgba(40, 167, 69, 0.7);
+}
+
+/* ======= Contact Section ni diri   ======= */
+/* Contact Section */
+#contact {
+  padding: 80px 0;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Section Title */
+#contact .section-title {
+  color: #00ff7e;
+  margin-bottom: 30px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+#contact .section-title::after {
+  content: "";
+  position: absolute;
+  width: 60px;
+  height: 3px;
+  background-color: #00ff7e;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 10px #00ff7e;
+}
+
+/* Contact Box */
+.contact-box {
+  width: 100%;
+  min-height: 320px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 255, 126, 0.3);
+  border: 1px solid rgba(0, 255, 126, 0.5);
+  background: rgba(10, 10, 10, 0.9);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: left;
+  transition: all 0.4s ease;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Glow effect on hover */
+.contact-box:hover {
+  box-shadow: 0 0 15px rgba(0, 255, 126, 0.6);
+  transform: translateY(-5px);
+}
+
+/* Box Headers */
+.contact-box h3 {
+  color: #00ff7e;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(0, 255, 126, 0.3);
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.contact-box h3 i {
+  margin-right: 10px;
+  font-size: 1.1em;
+  color: #00ff7e;
+  text-shadow: 0 0 5px rgba(0, 255, 126, 0.7);
+  transition: transform 0.3s ease;
+}
+
+.contact-box h3:hover i {
+  transform: scale(1.2) rotate(10deg);
+}
+
+/* Contact Info */
+.contact-info {
+  text-align: left;
+  font-size: 16px;
+  width: 100%;
+}
+
+.contact-info i {
+  color: #00ff7e;
+  margin-right: 15px;
+  font-size: 18px;
+  width: 20px;
+  text-align: center;
+  text-shadow: 0 0 5px rgba(0, 255, 126, 0.5);
+  transition: transform 0.3s ease;
+}
+
+.contact-info p:hover i {
+  transform: scale(1.2) rotate(10deg);
+}
+
+.contact-info p {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s ease;
+  padding: 8px 5px;
+  border-radius: 5px;
+  opacity: 0;
+  transform: translateX(-15px);
+}
+
+/* Staggered animation for contact info items */
+.contact-box:hover .contact-info p {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.contact-box:hover .contact-info p:nth-child(1) {
+  transition-delay: 0.1s;
+}
+.contact-box:hover .contact-info p:nth-child(2) {
+  transition-delay: 0.2s;
+}
+.contact-box:hover .contact-info p:nth-child(3) {
+  transition-delay: 0.3s;
+}
+
+.contact-info p:hover {
+  transform: translateX(5px);
+  background-color: rgba(0, 255, 126, 0.1);
+}
+
+/* Social Links */
+.contact-social {
+  width: 100%;
+}
+
+.contact-social p {
+  margin-bottom: 15px;
+  opacity: 0;
+  transform: translateX(-15px);
+  transition: all 0.4s ease;
+}
+
+.contact-box:hover .contact-social p {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Stagger animation for social links */
+.contact-box:hover .contact-social p:nth-child(1) {
+  transition-delay: 0.1s;
+}
+.contact-box:hover .contact-social p:nth-child(2) {
+  transition-delay: 0.2s;
+}
+.contact-box:hover .contact-social p:nth-child(3) {
+  transition-delay: 0.3s;
+}
+
+/* Fix for hyperlink-style social links */
+.contact-social .social-link {
+  display: flex;
+  align-items: center;
+  color: #f0f0f0 !important; /* Force white text color */
+  text-decoration: none !important; /* Remove underline */
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: rgba(0, 255, 126, 0.1);
+  border: 1px solid rgba(0, 255, 126, 0.3);
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.contact-social .social-link:hover {
+  background: rgba(0, 255, 126, 0.2);
+  transform: translateX(5px);
+  color: #f0f0f0 !important; /* Keep white text on hover */
+  text-decoration: none !important; /* Keep removing underline on hover */
+}
+
+.contact-social .social-link i {
+  color: #00ff7e !important; /* Force icons to be green */
+  font-size: 18px;
+  margin-right: 10px;
+  text-shadow: 0 0 3px rgba(0, 255, 126, 0.7);
+  transition: transform 0.3s ease;
+}
+
+.contact-social .social-link:hover i {
+  transform: scale(1.2) rotate(10deg);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .row.justify-content-between {
+    justify-content: center !important;
+  }
+}
+
+@media (max-width: 768px) {
+  #contact {
+    padding: 60px 0;
+  }
+
+  .contact-box {
+    padding: 25px 20px;
+    min-height: 280px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-box {
+    align-items: center;
+    text-align: center;
+    padding: 20px 15px;
+  }
+
+  .contact-box h3 {
+    justify-content: center;
+  }
+
+  .contact-info {
+    text-align: center;
+  }
+
+  .contact-info p {
+    justify-content: center;
+  }
+
+  .contact-social p {
+    justify-content: center;
+    display: flex;
+  }
+
+  .contact-social .social-link {
+    justify-content: center;
+  }
+
+  .contact-info p:hover,
+  .contact-social .social-link:hover {
+    transform: translateY(-3px);
+    transform: translateX(0);
+  }
+}
+
+/* ======= FIXED: Section Fade In & Out Animation ======= */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOutDown {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+}
+
+/* Apply the animation */
+.section {
+  padding-top: 400px;
+  scroll-margin-top: 400px;
+  margin-bottom: 600px;
+  margin-top: 200px;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+/* Visible when in view */
+.section.in-view {
+  animation: fadeInUp 1.3s ease-in-out;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Fade out when leaving view */
+.section.out-view {
+  animation: fadeOutDown 1.1s ease-in-out;
+  transform: translateY(0);
+  opacity: 0;
+}
