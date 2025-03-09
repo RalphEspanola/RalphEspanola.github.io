@@ -204,6 +204,12 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
+  // Cv gyapon
+
+  document.addEventListener("DOMContentLoaded", function () {
+    console.log("CV Modal script loaded!"); // Debugging line
+  });
+
   // Add keyboard support (Escape key to close)
   window.addEventListener("keydown", function (event) {
     if (event.key === "Escape" && cvModal.style.display === "flex") {
