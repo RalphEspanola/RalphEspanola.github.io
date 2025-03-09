@@ -7,7 +7,7 @@ body {
 }
 
 #home {
-  margin-top: 180px !important; /* Adjust this value as needed */
+  margin-top: 70px !important; /* Adjust this value as needed */
 }
 
 /* Navbar */
@@ -24,15 +24,23 @@ body {
 }
 
 .navbar-brand {
-  color: #077b32 !important; /* Keep color consistent */
-  font-weight: 600;
-  transition: color 0.3s ease-in-out;
+  font-size: 1.5rem; /* Increase font size for better visibility */
+  font-weight: bold; /* Bold font for emphasis */
 }
 
-.navbar-brand:hover {
-  color: #04a03d !important; /* Slightly lighter green */
+.text-light {
+  color: #fff; /* White text for contrast */
 }
 
+.brand-highlight {
+  color: #00ff7e; /* Neon green color for highlight */
+  text-shadow: 0 0 8px rgba(0, 255, 126, 0.6); /* Neon glow effect */
+}
+
+/* Optional: Add a hover effect for the brand */
+.navbar-brand:hover .brand-highlight {
+  text-shadow: 0 0 15px rgba(0, 255, 126, 0.8); /* Enhanced glow on hover */
+}
 .navbar-nav .nav-link {
   position: relative;
   font-weight: 500;
@@ -121,53 +129,110 @@ body {
 .modal {
   display: none;
   position: fixed;
-  z-index: 1050;
+  z-index: 1000;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding-top: 60px; /* Add padding at the top to lower the modal */
 }
 
 .modal-content {
-  background-color: #fefefe;
-  margin: 5% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
+  background: #000;
+  padding: 2px 5px;
+  border-radius: 10px;
+  width: 90%;
   max-width: 800px;
-  border-radius: 8px;
+  max-height: 85vh; /* Slightly reduced to account for navbar */
   position: relative;
+  overflow: auto;
+  margin-top: 60px; /* Add margin at the top to push it below navbar */
 }
 
 .close {
-  color: #aaa;
   position: absolute;
   top: 10px;
   right: 15px;
   font-size: 28px;
   font-weight: bold;
   cursor: pointer;
-  z-index: 1060;
+  z-index: 1010;
+  color: #333;
 }
 
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
+.close:hover {
+  color: #000;
 }
 
-.modal-cv-image {
+.cv-container {
   width: 100%;
-  height: auto;
-  margin-bottom: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  max-height: calc(85vh - 60px); /* Adjusted for the new max-height */
 }
 
-.modal-cv-image:last-child {
-  margin-bottom: 0;
+.cv-images {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 10px 0;
 }
+
+.cv-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .modal-content {
+    width: 95%;
+    padding: 15px;
+    margin-top: 70px; /* Slightly more margin on smaller screens */
+  }
+
+  .modal {
+    padding-top: 70px; /* More padding on smaller screens */
+  }
+
+  .cv-container {
+    max-height: calc(85vh - 40px);
+  }
+
+  .cv-images {
+    gap: 10px;
+  }
+}
+
+/* Default styling for the button */
+#viewCvBtn {
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+/* Media query for mobile devices */
+@media (max-width: 767.98px) {
+  #viewCvBtn {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: max-content; /* Makes the button only as wide as its content */
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  /* If you have a container div for the button, you can also use text-align */
+  .btn-container {
+    text-align: center;
+    width: 100%;
+  }
+}
+/* End of CV */
 
 .neon-button {
   width: 150px; /* Fixed button width */
@@ -326,11 +391,44 @@ body {
 
 /* My project section */
 /* My project section */
+.category-toggle {
+  position: relative;
+  padding: 0 10px;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+}
+
+.category-toggle::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #00ff7e;
+  transition: width 0.3s ease-in-out;
+}
+
+.category-toggle:hover::after {
+  width: 100%;
+}
+
+.category-toggle.active::after {
+  width: 100%;
+  box-shadow: 0 0 10px rgba(0, 255, 126, 0.6), 0 0 20px rgba(0, 255, 126, 0.4);
+}
+
+.category-toggle:hover {
+  text-shadow: 0 0 8px rgba(0, 255, 126, 0.6);
+}
+
+.category-toggle.active {
+  color: #00ff7e;
+  text-shadow: 0 0 8px rgba(0, 255, 126, 0.6);
+}
+
 .project-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
+  margin: 0;
 }
 
 /* Wrapper to position the card & blur effect */
@@ -356,6 +454,46 @@ body {
   border: 2px solid #00ff7e;
   box-shadow: 0 0 5px rgba(0, 255, 126, 0.3), 0 0 15px rgba(0, 255, 126, 0.2),
     0 0 30px rgba(0, 255, 126, 0.1);
+  height: 650px; /* Set the fixed height here */
+  display: flex;
+  flex-direction: column;
+}
+
+.card-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.video-container {
+  flex-grow: 1;
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.card-body {
+  margin-top: auto; /* Push the card body to the bottom */
+  text-align: left;
+}
+
+.card-title {
+  color: #00ff7e; /* Neon green color */
+  text-shadow: 0 0 8px rgba(0, 255, 126, 0.6); /* Optional: Add a neon glow effect to the text */
+}
+
+.card-text {
+  color: #fff;
 }
 
 /* Stronger glow for hovered card */
@@ -371,11 +509,6 @@ body {
   filter: blur(5px);
   opacity: 0.5;
   transform: scale(0.95);
-}
-
-/* Add a subtle glow to buttons on hover */
-.project-card:hover .btn-success {
-  box-shadow: 0 0 15px rgba(40, 167, 69, 0.7);
 }
 
 /* ======= Contact Section ni diri   ======= */
@@ -652,10 +785,9 @@ body {
 
 /* Apply the animation */
 .section {
-  padding-top: 400px;
-  scroll-margin-top: 400px;
+  scroll-margin-top: 200px;
   margin-bottom: 600px;
-  margin-top: 200px;
+
   opacity: 0;
   transform: translateY(50px);
   transition: opacity 1s ease-in-out, transform 1s ease-in-out;

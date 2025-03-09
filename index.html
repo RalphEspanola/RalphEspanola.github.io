@@ -53,8 +53,9 @@
     <!-- Home Section -->
     <section id="home" class="section my-5 py-5">
       <div class="container">
-        <div class="row">
-          <div class="col-md-6 d-flex flex-column justify-content-center">
+        <div class="row align-items-center gy-4">
+          <!-- Left Column (Text) -->
+          <div class="col-md-6 text-center text-md-start px-3">
             <div class="mb-3">
               <p class="display-6">printf ("Ralph Española");</p>
               <p class="lead fs-5">A <span class="typewriter-text"></span></p>
@@ -70,55 +71,64 @@
             </div>
 
             <!-- Social Media Icons -->
-            <div class="">
-              <div class="d-flex">
-                <a
-                  href="https://www.facebook.com/ralph.espanola.52"
-                  target="_blank"
-                  class="social-icon me-3"
-                >
-                  <i class="fab fa-facebook-f"></i>
-                </a>
-                <a
-                  href="https://github.com/RalphEspanola"
-                  target="_blank"
-                  class="social-icon me-3"
-                >
-                  <i class="fab fa-github"></i>
-                </a>
-                <a
-                  href="https://www.instagram.com/ralphespanola01/"
-                  target="_blank"
-                  class="social-icon me-3"
-                >
-                  <i class="fab fa-instagram"></i>
-                </a>
-              </div>
+            <div class="d-flex justify-content-center justify-content-md-start">
+              <a
+                href="https://www.facebook.com/ralph.espanola.52"
+                target="_blank"
+                class="social-icon me-3"
+              >
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a
+                href="https://github.com/RalphEspanola"
+                target="_blank"
+                class="social-icon me-3"
+              >
+                <i class="fab fa-github"></i>
+              </a>
+              <a
+                href="https://www.instagram.com/ralphespanola01/"
+                target="_blank"
+                class="social-icon me-3"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
             </div>
-            <button id="viewCvBtn" class="btn btn-primary neon-button mt-3">
-              View CV
-            </button>
+
+            <div class="btn-container">
+              <button id="viewCvBtn" class="btn btn-primary neon-button mt-3">
+                View CV
+              </button>
+            </div>
             <div id="cvModal" class="modal">
               <div class="modal-content">
                 <span class="close">&times;</span>
-                <iframe
-                  src="Assets/Vendor/Others/ESPAÑOLA (1).pdf"
-                  width="100%"
-                  height="600px"
-                ></iframe>
+                <div class="cv-container">
+                  <div class="cv-images">
+                    <img
+                      src="Assets/img/Cvpage1.jpg"
+                      alt="CV Page 1"
+                      class="cv-image"
+                    />
+                    <img
+                      src="Assets/img/CVpage2.jpg"
+                      alt="CV Page 2"
+                      class="cv-image"
+                    />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          <div class="col-md-1"></div>
-          <div
-            class="col-md-5 text-center d-flex align-items-center justify-content-center"
-          >
+
+          <!-- Right Column (Image) -->
+          <div class="col-md-6 text-center">
             <img
               src="Assets/img/CV pic.jpg"
               alt="Ralph's Photo"
-              class="profile-image profile-img"
-              height="300px"
+              class="profile-image profile-img img-fluid rounded-circle"
               width="300px"
+              height="300px"
             />
           </div>
         </div>
@@ -232,6 +242,31 @@
                 <p>PostgreSQL</p>
               </div>
             </div>
+            <div class="col">
+              <div class="skill-card">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg"
+                  alt="Figma"
+                  class="skill-logo"
+                  height="50px"
+                  width="50px"
+                />
+                <p>Figma</p>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="skill-card">
+                <img
+                  src="Assets/img/Canva-Logo.png"
+                  alt="Canva"
+                  class="skill-logo"
+                  height="auto"
+                  width="100px"
+                />
+                <p>Canva</p>
+              </div>
+            </div>
           </div>
 
           <!-- Certificates Section (Hidden Initially) -->
@@ -307,28 +342,121 @@
     </section>
 
     <section id="projects" class="section py-5 container">
-      <h2 class="text-center mb-4">My Projects</h2>
+      <h2 class="mb-4">My Projects</h2>
+
+      <!-- Project Toggle Buttons -->
+      <div class="project-toggle-container mb-4">
+        <span class="category-toggle active" data-category="all"
+          >All Projects</span
+        >
+        <span class="category-toggle" data-category="projects">Projects</span>
+        <span class="category-toggle" data-category="posters">Posters</span>
+        <span class="category-toggle" data-category="figma">Figma Designs</span>
+      </div>
+
       <div class="row project-container">
         <!-- Project 1 -->
-        <div class="col-md-4">
+        <div class="col-md-4 project-item" data-category="projects">
           <div class="project-wrapper">
             <div class="blur-bg"></div>
             <!-- Blur effect container -->
             <div class="card project-card">
               <div class="card-content">
+                <div class="video-container">
+                  <iframe
+                    src="https://drive.google.com/file/d/1nHZ6cL5KTDqpf1GKDwDrs5Og3HXUTOvj/preview"
+                    width="100%"
+                    height="600"
+                    frameborder="0"
+                    allowfullscreen
+                  >
+                  </iframe>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">Efficio: Smart Task Management</h5>
+                  <p class="card-text">
+                    Efficio enhances productivity by helping individuals and
+                    teams manage tasks efficiently, integrating the Pomodoro
+                    technique for better focus and time management.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Example Poster Item (you can add more) -->
+        <div class="col-md-4 project-item" data-category="posters">
+          <div class="project-wrapper">
+            <div class="blur-bg"></div>
+            <div class="card project-card">
+              <div class="card-content">
                 <img
-                  src="Assets/img/Efficio.jpeg"
+                  src="Assets/img/Best Fries.png"
                   class="card-img-top"
-                  alt="Project 1"
+                  alt="Poster Example"
+                  height="300px"
+                  width="100%"
                 />
                 <div class="card-body">
-                  <h5 class="card-title text-light">Project One</h5>
-                  <p class="card-text text-light">
-                    Efficio is designed to help individuals and teams manage
-                    their tasks effectively while incorporating the Pomodoro
-                    technique.
+                  <h5 class="card-title">
+                    Discounted Fries Promotional Poster
+                  </h5>
+                  <p class="card-text">
+                    A visually appealing poster designed to promote a special
+                    fries discount. It uses bold typography, engaging visuals,
+                    and persuasive marketing to attract customers and boost
+                    sales.
                   </p>
-                  <a href="#" class="btn btn-success">View Project</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Example Figma Item (you can add more) -->
+        <div class="col-md-4 project-item" data-category="figma">
+          <div class="project-wrapper">
+            <div class="blur-bg"></div>
+            <div class="card project-card">
+              <div class="card-content">
+                <img
+                  src="Assets/img/Figma.png"
+                  class="card-img-top"
+                  alt="Figma Design"
+                  height="300px"
+                  width="100%"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">WayPoint Wireframe</h5>
+                  <p class="card-text">
+                    WayPoint connects riders and drivers with real-time
+                    tracking, optimized routes, and seamless trip management for
+                    faster, more efficient commutes.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 project-item" data-category="posters">
+          <div class="project-wrapper">
+            <div class="blur-bg"></div>
+            <div class="card project-card">
+              <div class="card-content">
+                <img
+                  src="Assets/img/Poster.png"
+                  class="card-img-top"
+                  alt="Poster 2"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Timeless Elegance</h5>
+                  <p class="card-text">
+                    A stunning tribute to Kim Ji-won, showcasing her grace,
+                    talent, and captivating presence through a visually striking
+                    poster design.
+                  </p>
                 </div>
               </div>
             </div>
